@@ -12,6 +12,9 @@ services:
       - bundle:/usr/local/bundle/
     env_file:
       - development.env 
+    command: puma
+    ports:
+      - "3000:3000"
   postgres:
     image: postgres:9.6
   redis:
