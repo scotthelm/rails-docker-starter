@@ -1,0 +1,20 @@
+version: "2"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    links:
+      - postgres
+      - redis
+    volumes:
+      - .:/usr/src/app/
+      - bundle:/usr/local/bundle/
+    env_file:
+      - development.env 
+  postgres:
+    image: postgres:9.6
+  redis:
+    image: redis:latest
+volumes:
+  bundle:

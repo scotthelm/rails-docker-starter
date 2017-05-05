@@ -1,0 +1,2 @@
+gem install rails
+rails new . -d postgresql -T
